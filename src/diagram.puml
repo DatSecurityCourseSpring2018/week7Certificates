@@ -1,0 +1,19 @@
+@startuml
+hide footbox
+actor Subject
+create "Certificate Request" as CR
+Subject -> CR : generate
+participant "Certificate Autority" as CA
+Subject -> CA : submit certificate request
+CA --> CA: validates request
+note right: Perhaps human workflow
+
+CA -> CA: computes hash of request
+CA -> CA: encrypts hash using CA's private key
+
+create Certificate
+CA -> Certificate: create
+
+CA -> Subject: returns validated Certificate
+
+@enduml

@@ -49,7 +49,9 @@ public class SimpleHTTPSServer {
             HttpsServer httpsServer = HttpsServer.create( address, 0 );
 
             // initialise the keystore
-            String keyStoreLocation = "/home/ralf/kasperskeys.jks";
+            //String keyStoreLocation = "/home/ralf/kasperskeys.jks";
+            //String keyStoreLocation = "/Users/kasper/kasperskeys.jks";
+            String keyStoreLocation = "/Users/kasper/keystorefiles/siteofnoreturn.jks";
             char[] password = "surturR1hest".toCharArray();
             KeyStore ks = KeyStore.getInstance( "JKS" );
             FileInputStream fis = new FileInputStream( keyStoreLocation );
